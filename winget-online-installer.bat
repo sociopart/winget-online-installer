@@ -5,13 +5,13 @@ if _%1_==_payload_  goto :payload
     echo %~nx0: elevating self
     set vbs=%temp%\getadmin.vbs
     echo Set UAC = CreateObject^("Shell.Application"^)                >> "%vbs%"
-    echo UAC.ShellExecute "%~s0", "payload %~sdp0 %*", "", "runas", 1 >> "%vbs%"
+    echo UAC.ShellExecute "%~s0", "payload %1", "", "runas", 1 >> "%vbs%"
     "%temp%\getadmin.vbs"
     del "%temp%\getadmin.vbs"
 goto :eof
 
 :payload
-    cd /d %~dp0 & powershell Set-ExecutionPolicy Bypass -Scope Process -Force; ./winget-online-installer.ps1
+    cd /d %~dp0 & powershell Set-ExecutionPolicy Bypass -Scope Process -Force; ./winget-online-installer.ps1 %2
 pause
 goto :eof
 
