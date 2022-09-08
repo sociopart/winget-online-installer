@@ -6,7 +6,9 @@ Powershell script allows user to easily change links to current package versions
 
 Tested on x64 Windows 10 LTSC, however, you can try to install it on x86/ARMx86/ARMx64.
 # Usage
-To install Winget, simply double-click the bat file.
+1. Download archive (`Code -> Download ZIP`) or clone this repository.
+2. Unzip it and/or open folder with unzipped files. 
+3. Simply double-click the bat file.
 # Troubleshooting
 It's recommended to install Winget using `.bat` file to avoid problems with UAC.
 
